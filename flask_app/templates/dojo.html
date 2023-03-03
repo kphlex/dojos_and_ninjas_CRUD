@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
-    <h3>{{ dojo.name }} Ninjas</h3>
+    
+    <h3>{{ dojo.name }} Ninjas</h3> 
     <table class="table table-hover">
         <thead>
             <tr class="table-dark">
@@ -26,6 +26,11 @@
             {% endfor %}
         </tbody>
     </table>
-
+    <a href="/ninjas">
+        <button type="link" class="btn btn-dark">Edit</button>
+    </a>
+    <style>
+        
+    </style>
 
 {% endblock %}

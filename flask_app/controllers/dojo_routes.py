@@ -30,13 +30,12 @@ def show_dojo(id):
     return render_template('dojo.html', dojo = Dojo.get_dojo_with_ninjas(data))
 
 
-
-
-#DELETE
+#DELETE DOJO 
 @app.route('/dojo/delete/<int:id>')
 def delete_dojo(id):
     data = {
         'id': id
     }
     Dojo.delete_dojo(data)
+    print("NO GO")
     return redirect('/dojos')

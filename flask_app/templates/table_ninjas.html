@@ -20,8 +20,8 @@
                 <td>{{ ninja.first_name }}</td>
                 <td>{{ ninja.last_name }}</td>
                 <td>{{ ninja.age }}</td>
-                <td>{{ dojo_id.name }}</td>
-                <td><a href='/ninja/show/{{ ninja.id }}'>Show</a> | <a href='/ninja/edit/{{ ninja.id }}'>Edit</a> | <a href='/user/delete/{{ ninja.id }}'>Delete</a></td>
+                <td><a href='/dojo/show/{{ ninja.dojo_name.id }}'>{{ ninja.dojo_name.name }}</td>
+                <td><a href='/ninja/show/{{ ninja.id }}'>Show</a> | <a href='/ninja/edit/{{ ninja.id }}'>Edit</a> | <a href='/ninja/delete/{{ ninja.id }}'>Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -29,7 +29,7 @@
 
     <style>
         a {
-            font-size: 13px;
+            font-size: 15px;
         }
     </style>
 {% endblock %}
