@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <p>Full Name: {{ ninja.first_name }} {{ ninja.last_name }}</p>
+    <p>Age: {{ ninja.age }}</p>
+    <p>Created on: {{ ninja.created_at.strftime('%b %d %Y') }}</p>
+    <p>Last Updated: {{ ninja.updated_at.strftime('%b %d %Y') }}</p>
+    <div>
+        <a href='/ninja/edit/{{ ninja.id }}'>Edit</a> | <a href='/ninja/delete/{{ ninja.id }}'>Delete</a>
+    </div>
+
+
+{% endblock %}

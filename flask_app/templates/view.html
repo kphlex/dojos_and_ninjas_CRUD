@@ -1,0 +1,23 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+    <h4>View Ninjas & Dojo Tables</h4>
+    <p>Click the links below!</p>
+    <ul>
+        <li><a href="/ninjas">Ninjas</a></li>
+        <li><a href="/dojos">Dojos</a></li>
+        
+    </ul>
+
+    <style>
+        
+        ul {
+            width: 100%;
+            list-style: none;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+{% endblock %}

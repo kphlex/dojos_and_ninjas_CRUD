@@ -1,0 +1,40 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: azure;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 5px 10px 10px 5px #8f9fb0;
+    background-color: #9eafc1;
+    
+}
+
+img {
+    height: 100px;
+}
+#dojo_img { 
+    height: 140px;
+}
+.head {
+    border-bottom: 2px solid #6b7a8b;
+    border-bottom-left-radius: 130px;
+    border-bottom-right-radius: 130px;
+    box-shadow: 5px 10px 10px #8f9fb0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+}
+
+.container2 {
+    margin-top:25px;
+}

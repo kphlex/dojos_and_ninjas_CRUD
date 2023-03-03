@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block content %}
+
+    <h1>Create Dojo</h1>
+    <form action="/create_dojo" method="POST">
+        <input type="hidden" name="id">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input name='name'type="text" class="form-control" id="dojo_name">
+        </div>
+        <div class="movebtn">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+
+    <style>
+        form {
+            width: 65%;
+        }
+        .container {
+            width: 75%;
+        }
+        .movebtn {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+{% endblock %}

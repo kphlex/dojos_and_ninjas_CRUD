@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Create Ninja</h1>
+<form action="/create_ninja" method="POST">
+    <input type="hidden" name="id">
+    <div class="mb-3">
+        <label for="dojo" class="form-label">Dojo:</label>
+        <!-- <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Search Dojos..."> -->
+        <select class="form-select" name='dojo_id' aria-label="default">
+            <option selected>Select Dojo</option>
+            {% for dj in dojo_list%}
+            <option value="{{dj.id}}">{{ dj.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First Name:</label>
+        <input name='first_name'type="text" class="form-control" id="first_name">
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name:</label>
+        <input name='last_name'type="text" class="form-control" id="last_name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Age:</label>
+        <input name='age' type="int" class="form-control" id="age">
+    </div>
+    <div class="movebtn">
+    <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</form>
+
+<style>
+    form {
+        width: 65%;
+    }
+    .container {
+        width: 75%;
+    }
+    .movebtn {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
+
+
+
+
+
