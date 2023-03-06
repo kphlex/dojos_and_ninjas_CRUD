@@ -1,9 +1,7 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.dojo_class import Dojo
-
-
-
+from flask_app.models.ninja_class import Ninja
 
 
 #CREATE DOJO FORM 
@@ -36,6 +34,5 @@ def delete_dojo(id):
     data = {
         'id': id
     }
-    Dojo.delete_dojo(data)
     print("NO GO")
-    return redirect('/dojos')
+    return redirect('/ninjas')

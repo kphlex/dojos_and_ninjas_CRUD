@@ -2,19 +2,9 @@
 
 {% block content %}
 
-<h1>Create Ninja</h1>
-<form action="/create_ninja" method="POST">
+<h1>Registration</h1>
+<form action="/register/user" method="POST">
     <input type="hidden" name="id">
-    <div class="mb-3">
-        <label for="dojo" class="form-label">Dojo:</label>
-        <!-- <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Search Dojos..."> -->
-        <select class="form-select" name='dojo_id' aria-label="default">
-            <option selected>Select Dojo</option>
-            {% for dj in dojo_list%}
-            <option value="{{dj.id}}">{{ dj.name }}</option>
-            {% endfor %}
-        </select>
-    </div>
     <div class="mb-3">
         <label for="first_name" class="form-label">First Name:</label>
         <input name='first_name'type="text" class="form-control" id="first_name">
@@ -24,8 +14,12 @@
         <input name='last_name'type="text" class="form-control" id="last_name">
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label">Age:</label>
-        <input name='age' type="int" class="form-control" id="age">
+        <label for="email" class="form-label">Email:</label>
+        <input name='email' type="int" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input name='password' type="int" class="form-control" id="password">
     </div>
     <div class="movebtn">
     <button type="submit" class="btn btn-dark">Submit</button>
@@ -60,6 +54,7 @@
 
 <style>
     .ERROR {
+    color: red;
     width: 75%;
     margin-top: 20px;
     padding: 10px;
@@ -72,5 +67,3 @@
 </style>
 
 {% endblock %}
-
-

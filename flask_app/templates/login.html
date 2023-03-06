@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>User Login</h1>
+<form action="/login/user" method="POST">
+    <input type="hidden" name="id">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input name='email' type="int" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input name='password' type="int" class="form-control" id="password">
+    </div>
+    <div class="movebtn">
+    <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</form>
+<a href="/register">New User Registration</a>
+<style>
+    form {
+        width: 65%;
+    }
+    .container {
+        width: 75%;
+    }
+    .movebtn {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
+
+
+{% block dojo%}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="ERROR">
+            {% for message in messages %}
+                <h5>{{ message }}</h5>
+            {% endfor %}
+        <div>
+    {% endif %}
+{% endwith %}
+
+<style>
+    .ERROR {
+    color: red;
+    width: 75%;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 5px 10px 10px 5px #8f9fb0;
+    background-color: #9eafc1;
+    }
+</style>
+
+{% endblock %}

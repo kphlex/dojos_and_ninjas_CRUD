@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import dojo_class
+from flask import flash
 
 class Ninja:
     DB = "dn_db"
@@ -48,7 +49,7 @@ class Ninja:
             ninjas.append(cls(row))
         return ninjas
     
-    
+    #READ ALL NINJAS WITH DOJO NAME - /ninjas table
     @classmethod
     def get_ninjas_with_dojo_name(cls):
         query = """SELECT * 
@@ -70,7 +71,7 @@ class Ninja:
             ninjas.append(ninja)
         return ninjas
         
-        
+    #READ ONE NINJA
     @classmethod 
     def get_one(cls, data):
         query = """SELECT * 
@@ -101,3 +102,33 @@ class Ninja:
         results = connectToMySQL(cls.DB).query_db(query, data)
         return results
     
+    # @classmethod
+    # def delete_ninjas_then_dojo(cls, data):
+    #     query = """
+    #             DELETE * 
+    #             FROM ninjas
+    #             LEFT JOIN dojos
+    #             ON ninjas.dojo_id = dojos.id
+    #             WHERE dojos.id = %(id)s
+    #             ;"""
+    #     query_two = """
+    #                 DELETE FROM dojos
+    #                 WHERE dojos.id = %(id)s
+    #                 ;"""
+    #     results = connectToMySQL(cls.DB).query_db(query, data)
+    #     two_results = connectToMySQL(cls.DB).query_db(query_two, data)
+    #     return results, two_results
+    
+    #VALIDATION
+    @staticmethod
+    def validate_ninja(ninja):
+        is_valid = True
+        if len(ninja['first_name']) < 3:
+            flash("First Name must be at least 3 characters.")
+            is_valid = False
+        if len(ninja['last_name'])  < 3:
+            flash("Last Name must be at least 3 characters.")
+            is_valid = False
+        if len(ninja['age']) < 2:
+            flash("Age must be at least 2 characters.")
+        return is_valid
