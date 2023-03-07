@@ -1,4 +1,6 @@
 Create Dojos and Ninjas.
 
 
-Registration and Login functionality. 
+UPDATE:
+3/6/23
+Added Registration and Login functionality. 

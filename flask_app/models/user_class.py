@@ -58,4 +58,10 @@ class User:
         if len(user['password']) < 8:
             flash('Password must be at least 8 characters')
             is_valid = False
+        if not any(char.isdigit() for char in user['password']):
+            flash('Password must contain at least one number')
+            is_valid = False
+        if not any(char.isupper() for char in user['password']):
+            flash('Password must contain at least one uppercase letter')
+            is_valid = False
         return is_valid
